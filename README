@@ -1,0 +1,15 @@
+RemoteControl Input Service
+===========================
+
+This service is started at boot time and checks for a connected USB IR
+Transceiver. If one is found then we can use this service to set the keymaps
+and protocols to allow AndroidTV to be controlled by a STB IR RemoteControl
+such as the various ones shipped by Sky UK.
+
+
+A Useful command line for a quick turn around!
+==============================================
+
+adb remount && mm && \
+adb push $ANDROID_PRODUCT_OUT/system/priv-app/RemoteControl/RemoteControl.apk \
+/system/priv-app/RemoteControl/RemoteControl.apk && adb reboot
